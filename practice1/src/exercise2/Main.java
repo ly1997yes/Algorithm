@@ -33,7 +33,6 @@ public class Main {
 			//System.out.print("\nprique.maxmum():" + prique.maxmum() + "\n");//Yes;
 			//prique.heapIncrease(4, 9);//Yes
 			//prique.insert(9);//Yes
-			prique.printHeap(); 
 			
 		}catch (Exception e){	
 			e.printStackTrace(System.out);

@@ -72,6 +72,7 @@ public class MergeSort {
 		int arr[] = new int[10];
 		createArr(arr);
 		printArr(arr);
+		
 		Merge_sort(arr,0,arr.length-1);
 		printArr(arr);
 

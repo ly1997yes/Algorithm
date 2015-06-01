@@ -1,8 +1,10 @@
 /*
  * 3．Implement Quicksort and answer the following questions.
  * (1) How many comparisons will Quicksort do on a list of n elements that all have the same value?
+ *                                    n*(n-1)/2
  * (2) What are the maximum and minimum number of comparisons will Quicksort do on a list of n elements,
  * 		 give an instance for maximum and minimum case respectively.
+ *                               最大： n*(n-1)/2 最小：O(n*lgn)
  */
 package exercise3;
 
