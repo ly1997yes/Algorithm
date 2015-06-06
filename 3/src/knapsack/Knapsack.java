@@ -81,25 +81,24 @@ public class Knapsack {
 		}
 		for(int i = 1;i < this.goods.length+1;i++){
 			for(int j= 1;j< this.maxWight+1;j++){
-				if(this.goods[i+1].wight > j){
-					c[i][j] = maxOfTwoDigital(0 , c[i-1][j]);
-				}
-				else{
-					if( c[i-1][j-(this.goods[i+1].wight)]+this.goods[i+1].value > c[i-1][j]){
-						c[i][j] = c[i-1][j-(this.goods[i+1].wight)]+this.goods[i+1].value;
+				if(this.goods[i-1].wight < j){
+					if( c[i-1][j-(this.goods[i-1].wight)]+this.goods[i-1].value > c[i-1][j]){
+						c[i][j] = c[i-1][j-(this.goods[i-1].wight)]+this.goods[i-1].value;
+						this.count[i-1] = this.goods[i-1].wight;
 						
 					}else{
-						c[i][j] = c[i][j];
+						c[i][j] = c[i-1][j];
+						this.count[i-1] = 0;
 					}
 				}
 			}
 		}
-		
-	}
-	private  int maxOfTwoDigital(int a,int b){
-		if(a > b)
-			return a;
-		return b;
+		int current = 0;
+		for(int i = this.goods.length-1;i>=0;i--){
+			System.out.println("id: " + this.goods[i].id +" value-wight: " + this.goods[i].value + "-"+ this.goods[i].wight + " carried count:" + count[i]);
+			current += count[i];
+		}
+		System.out.print("count in all:"+ current);
 	}
 	
 	
@@ -108,7 +107,7 @@ public class Knapsack {
 		int [] w = {10,20,30,40,50};
 		int maxWight = 100;
 		Knapsack k = new Knapsack(v,w,maxWight);
-		k.fractionKnapsack();
+		k._01Knapsack();
 	}
 }
 class Goods{
