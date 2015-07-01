@@ -6,7 +6,7 @@
 
  */
 package lcs;
-
+///test
 public class LCS {
 	private char [] x;//´®X
 	private char [] y;//´®Y
